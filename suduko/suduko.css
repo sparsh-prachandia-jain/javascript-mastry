@@ -5,7 +5,7 @@
 }
 
 :root {
-    --border-color: rgb(102, 91, 130);
+    --border-color: rgb(0, 0, 0);
 }
 
 html,
@@ -244,7 +244,7 @@ font-size: 1.2rem;
 
 .boardcontainer{
     display: none;
-    background-color: #801020;
+    background-color: #1f1315;
 }
 @keyframes growdiv {
     from {
@@ -257,15 +257,21 @@ font-size: 1.2rem;
 
 #sudoku-board {
     display: grid;
-    grid-template-columns: repeat(9, 50px);
-    gap: 1px;
-    grid-template-rows: repeat(9, 50px);
+    grid-template-columns: repeat(9, 3vw);
+    gap: 2px;
+    grid-template-rows: repeat(9, 3vw);
 }
 
 .cells {
-    background-color: #8f91a2;
+    background-color: #747896;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+.cells span{
+    color: #1a0a2e;
+    font-size: 2rem;
+}
 .cells:hover {
     animation: colorChange 2s infinite;
 }
@@ -356,6 +362,14 @@ font-size: 1.2rem;
     body {
     height: calc(100% - 30px);
 }
+#sudoku-board {
+    grid-template-columns: repeat(9, 5vw);
+    gap: 2px;
+    grid-template-rows: repeat(9, 5vw);
+}
+.cells span{
+    font-size: 1.8rem;
+}
 }
 @media only screen and (max-width: 600px) {
   .quiz-container {
@@ -365,4 +379,12 @@ font-size: 1.2rem;
     font-size: 1rem;
     padding: 3vw;
   }
+  #sudoku-board {
+    grid-template-columns: repeat(9, 8vw);
+    gap: 2px;
+    grid-template-rows: repeat(9, 8vw);
+}
+.cells span{
+    font-size: 1.8rem;
+}
 }
